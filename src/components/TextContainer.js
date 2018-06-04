@@ -1,35 +1,37 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export default class TextContainer extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
-      text: ''
-    }
+      text: ""
+    };
   }
 
-  updateText(e) {
-    this.setState({
-      text: e.target.value
-    })
-  }
+  updateText = e => this.setState({ text: e.target.value });
+
+  // updateText(e) {
+  //   this.setState({
+  //     text: e.target.value
+  //   })
+  // }
 
   render() {
     return (
       <div className="textContainer">
-        <textarea 
-          // style={  }
+        <textarea
+          style={{
+            fontFamily: this.props.fontFamily,
+            fontSize: this.props.fontFamily,
+            color: this.props.fontColor
+          }}
           onChange={this.updateText}
-          value={this.state.text} 
-          placeholder='Start typing your thoughts here!'
+          value={this.state.text}
+          placeholder="Start typing your thoughts here!"
           cols="90"
-          rows="30">
-        </textarea>
+          rows="30"
+        />
       </div>
-    )
+    );
   }
 }
-
-
-
-
